@@ -1,0 +1,36 @@
+<%- include('../partialsSlides/header') %>
+
+    <div class="container mt-5">
+        <div class="container" id="alert"></div>
+
+        <form class="my-2" action="/admin-square/dash-board/<%= slide.id %>?_method=DELETE" method="POST">
+            <button class="btn btn-outline-danger">Delete this slide</button>
+        </form>
+        <div id="slides">
+            <form id="editSlide" action="/admin-square/dash-board/<%= slide.id %>?_method=PATCH" method="POST"
+                enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="slideImgs" accept="images/*" name="images"
+                            multiple aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose Images</label>
+                    </div>
+                </div>
+                <div id="slides">
+                    <% for (const img of slide.images) { %>
+                        <div class="card">
+                            <img src="<%= img.url %>" class="card-img-top">
+                            <h5 class="card-title">
+                                <label for="<%= img.id %>">Delete?</label>
+                                <input id="<%= img.id %>" type="checkbox" name="deleteImages[]"
+                                    class="imageDeleteCheckbox" value="<%= img.filename %>">
+                            </h5>
+                        </div>
+                        <% } %>
+                </div>
+                <button class="btn btn-outline-success">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('../partialsSlides/footer') %>

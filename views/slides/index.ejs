@@ -1,0 +1,26 @@
+<%- include('../partialsSlides/header') %>
+
+
+    <%- include('../partialsSlides/navbar') %>
+
+        <h1 class="text-center my-5">Slides</h1>
+        <div class="container" id="alert"></div>
+        <% for (const slide of slides) { %>
+            <div class="container mt-5">
+                <a class="btn btn-outline-warning mb-3" href="/admin-square/dash-board/<%= slide.id %>">Show</a>
+                <div id="slides">
+                    <% for (const img of slide.images) { %>
+                        <a href="/admin-square/dash-board/<%= img.id %>">
+                            <div class="card">
+                                <img src="<%= img.url %>" class="card-img-top">
+                            </div>
+                        </a>
+                        <% } %>
+                </div>
+            </div>
+            <% } %>
+
+
+
+
+                <%- include('../partialsSlides/footer') %>

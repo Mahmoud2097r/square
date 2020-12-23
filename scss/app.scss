@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+}
+
+#mainNavbar {
+	#barBtn {
+		color: #00ad00;
+	}
+
+	.navbar-toggler:focus {
+		outline: none;
+	}
+
+	.nav-link:hover {
+		color: #00ad00;
+	}
+}
+
+#slides {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	.card {
+		width: 18rem;
+		border: none;
+		img {
+			max-width: 90%;
+			height: 15rem;
+			border-radius: 2rem;
+			-webkit-border-radius: 2rem;
+			-moz-border-radius: 2rem;
+			-ms-border-radius: 2rem;
+			-o-border-radius: 2rem;
+		}
+	}
+}
